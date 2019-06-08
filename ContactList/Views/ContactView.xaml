@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="ContactList.Views.ContactView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vm="clr-namespace:ContactList.ViewModels"
+             xmlns:local="clr-namespace:ContactList.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="600">
+    <Grid>
+        <Border Padding="10">
+            <StackPanel>
+
+                <!-- Contact Entries-->
+                <!-- Contact Name -->
+                <TextBlock Text="Contact Name" Margin="5 10" />
+                <TextBox x:Name="ContactName" Text="{Binding NewContactVM.Name, FallbackValue=NULL, Mode=TwoWay}"
+                         Padding="2" Margin="5 0"></TextBox>
+                <!-- Contact Number -->
+                <TextBlock Text="Contact Number" Margin="5 10" />
+                <TextBox x:Name="ContactNumber" Text="{Binding NewContactVM.PhoneNumber, FallbackValue=NULL, Mode=TwoWay}"
+                         Padding="2" Margin="5 0"></TextBox>
+                <!-- Contact Email -->
+                <TextBlock Text="Contact Email" Margin="5 10" />
+                <TextBox x:Name="ContactEmail" Text="{Binding NewContactVM.Email, FallbackValue=NULL, Mode=TwoWay}"
+                         Padding="2" Margin="5 0"></TextBox>
+
+                <!-- Add Contact Button -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="AddContactButton"  Grid.Column="1" Command="{Binding NewContactVM.OpenNewContactWindowCommand}"
+                            Content="Add Contact" Margin="10"/>
+                </Grid>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

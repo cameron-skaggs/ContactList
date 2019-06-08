@@ -1,0 +1,56 @@
+﻿<Window x:Class="ContactList.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ContactList"
+        xmlns:vm="clr-namespace:ContactList.ViewModels"
+        xmlns:v="clr-namespace:ContactList.Views"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="400">
+    
+    <Window.Resources>
+        <DataTemplate x:Name="ContactViewTemplate" DataType="{x:Type vm:ContactsViewModel}">
+            <v:ContactView DataContext="{Binding}"/>
+        </DataTemplate>
+    </Window.Resources>
+        
+    <Window.DataContext>
+        <local:AppViewModel/>
+    </Window.DataContext>
+    
+    <DockPanel>
+        <!-- Add, Remove, Update Buttons -->
+        <Grid Background="LightGray" DockPanel.Dock="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <!-- Edit Contact Button -->
+            <Button x:Name="AddContactButton"  Grid.Column="0"
+                        Margin="30, 10" Command="{Binding NewContactVM.OpenNewContactWindowCommand}">
+                <Button.Content>
+                    <Image Height="30" Width="30" Source="pack://siteoforigin:,,,/Resources/add_user.png" />
+                </Button.Content>
+            </Button>
+            <!-- Edit Contact Button -->
+            <Button x:Name="EditContactButton" Grid.Column="1"
+                        Margin="30, 10" Command="{Binding ListVM.LoadContactsCommand}">
+                <Button.Content>
+                    <Image Height="30" Width="30" Source="pack://siteoforigin:,,,/Resources/refresh.png" />
+                </Button.Content>
+            </Button>
+            <!-- Remove Contact Button -->
+            <Button x:Name="RemoveContactButton" Grid.Column="2" Margin="30, 10">
+                <Button.Content>
+                    <Image Height="30" Width="30" Source="pack://siteoforigin:,,,/Resources/remove.png" />
+                </Button.Content>
+            </Button>
+        </Grid>
+        <Grid DockPanel.Dock="Bottom">
+
+            <ContentControl Content="{Binding CurrentView}" />
+        </Grid>
+    </DockPanel>
+</Window>
