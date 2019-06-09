@@ -55,6 +55,7 @@ namespace ContactList.ViewModels
             Console.WriteLine("name: " + NewContact.Name +"\n phone:" + NewContact.PhoneNumber + "\n email" + NewContact.Email);
             Contacts.Add(NewContact);
             _contacts.Add(NewContact);
+            Console.WriteLine("contact length " + Contacts.Count);
      
         }
     }

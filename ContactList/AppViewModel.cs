@@ -39,7 +39,7 @@ namespace ContactList
         }
         public AppViewModel()
         {
-            var dataService = new JsonContactDataService();
+            var dataService = new MockDataService();
             ListVM = new ListViewModel(dataService);
             NewContactVM = new NewContactViewModel(dataService);
             ContactsVM = new ContactsViewModel(dataService);

@@ -29,6 +29,7 @@ namespace ContactList.ViewModels
 
         private void LoadContacts()
         {
+            Console.WriteLine("number of contacts in load contacts " + _service.GetContacts().Count());
             ContactsVM.LoadContacts(_service.GetContacts());
         }
     }
