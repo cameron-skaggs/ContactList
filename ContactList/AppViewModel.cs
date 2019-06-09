@@ -1,5 +1,6 @@
 ﻿using ContactList.Services;
 using ContactList.ViewModels;
+using ContactList.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,13 +14,6 @@ namespace ContactList
     public class AppViewModel : ObservableObject
     {
         private IContactDataService _dataService;
-        private object _currentView;
-        public object CurrentView
-
-        {
-            get { return _currentView; }
-            set { OnPropertyChanged(ref _currentView, value); }
-        }
 
         private ListViewModel _listVM;
         public ListViewModel ListVM
@@ -47,7 +41,7 @@ namespace ContactList
             NewContactVM = new NewContactViewModel(dataService);
             ContactsVM = new ContactsViewModel(dataService);
             ListVM = new ListViewModel(dataService, ContactsVM);
-            CurrentView = ListVM;
+            
         }
 
         #region Commands
@@ -57,6 +51,18 @@ namespace ContactList
             _dataService.Delete(ContactsVM.SelectedContact);
         }
         private bool CanDelete() { return ContactsVM.SelectedContact == null ? false : true; }
+
+        public ICommand OpenNewContactWindowCommand => new RelayCommand(showNewContact);
+        
+        //this is breaking MVVM rules :(
+        private void showNewContact()
+        {
+            NewContact newContact = new NewContact();
+            newContact.DataContext = new NewContactViewModel(_dataService);
+            newContact.Show();
+        }
+
         #endregion
     }
+
 }

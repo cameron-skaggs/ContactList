@@ -6,9 +6,10 @@
         xmlns:local="clr-namespace:ContactList"
         xmlns:vm="clr-namespace:ContactList.ViewModels"
         xmlns:v="clr-namespace:ContactList.Views"
+        d:DataContext="{d:DesignInstance vm:NewContactViewModel}"
         mc:Ignorable="d"
-        Title="NewContact" Height="450" Width="400">
-    
+        Title="NewContact" Height="450" Width="400"
+        x:Name="NewContactWindow">
     <Grid>
         <Border Padding="10">
             <StackPanel>
@@ -16,16 +17,16 @@
                 <!-- Contact Entries-->
                 <!-- Contact Name -->
                 <TextBlock Text="Contact Name" Margin="5 10" />
-                <TextBox Text="{Binding NewName,
+                <TextBox Text="{Binding NewContact.Name,
                      Mode=TwoWay}" 
                           Padding="2" Margin="5 0" ></TextBox>
                 <!-- Contact Number -->
                 <TextBlock Text="Contact Number" Margin="5 10" />
-                <TextBox Text="{Binding NewPhoneNumber, FallbackValue=NULL, Mode=TwoWay}"
+                <TextBox Text="{Binding NewContact.PhoneNumber, FallbackValue=NULL, Mode=TwoWay}"
                      Padding="2" Margin="5 0"></TextBox>
                 <!-- Contact Email -->
                 <TextBlock Text="Contact Email" Margin="5 10" />
-                <TextBox Text="{Binding NewEmail, FallbackValue=NULL, Mode=TwoWay}" 
+                <TextBox Text="{Binding NewContact.Email, FallbackValue=NULL, Mode=TwoWay}" 
                      Padding="2" Margin="5 0"></TextBox>
 
                 <!-- Add Contact Button -->
@@ -36,7 +37,8 @@
                         <ColumnDefinition Width="*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Button x:Name="AddContactButton"  Grid.Column="1" Content="Add Contact" 
-                            Command="{Binding SaveContactCommand}" Margin="10"/>
+                            Command="{Binding SaveContactCommand}" 
+                            CommandParameter="{Binding ElementName=NewContactWindow}" Margin="10"/>
                 </Grid>
             </StackPanel>
         </Border>

@@ -29,7 +29,7 @@
             </Grid.ColumnDefinitions>
             <!-- Edit Contact Button -->
             <Button x:Name="AddContactButton"  Grid.Column="0"
-                        Margin="30, 10" Command="{Binding NewContactVM.OpenNewContactWindowCommand}">
+                        Margin="30, 10" Command="{Binding OpenNewContactWindowCommand}">
                 <Button.Content>
                     <Image Height="30" Width="30" Source="pack://siteoforigin:,,,/Resources/add_user.png" />
                 </Button.Content>
@@ -51,7 +51,7 @@
         </Grid>
         <Grid DockPanel.Dock="Bottom">
 
-            <ContentControl Content="{Binding CurrentView}" />
+            <ContentControl Content="{Binding ListVM}" />
         </Grid>
     </DockPanel>
 </Window>
