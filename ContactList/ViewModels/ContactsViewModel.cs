@@ -22,16 +22,26 @@ namespace ContactList.ViewModels
 
         private List<Contact> _contacts;
         public ObservableCollection<Contact> Contacts { get; set; }
-
         public ICommand DeleteContactCommand { get; private set; }
 
         private IContactDataService _dataService;
 
-        public ContactsViewModel()
+        public ContactsViewModel(Services.IContactDataService dataService)
         {
-            
+            _dataService = dataService;
+            _contacts = dataService.GetContacts().ToList();
+            Console.WriteLine("In ContactsVM");
+            DeleteContactCommand = new RelayCommand(Delete);
         }
 
+        private void Delete()
+        {
+            SelectedContact = _selectedContact;
+            Console.WriteLine("In delete");
+            Contacts = new ObservableCollection<Contact>(_contacts);
+            Console.WriteLine("Bout to delete " + SelectedContact.Name);
+            Contacts.Remove(SelectedContact);
+        }
         private bool CanDelete(){ return SelectedContact == null ? false : true; }
 
         public void LoadContacts(IEnumerable<Contact> contacts)

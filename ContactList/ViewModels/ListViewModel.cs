@@ -21,7 +21,7 @@ namespace ContactList.ViewModels
 
         public ListViewModel(Services.IContactDataService service)
         {
-            ContactsVM = new ContactsViewModel();
+            ContactsVM = new ContactsViewModel(service);
 
             _service = service;
             LoadContactsCommand = new RelayCommand(LoadContacts);

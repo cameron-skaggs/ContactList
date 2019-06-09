@@ -6,11 +6,11 @@
              xmlns:v="clr-namespace:ContactList.Views"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="400">
-    <Grid Background="Crimson">
-        <ListView ItemsSource="{Binding ContactsVM.Contacts}" SelectedItem="{Binding ContactsVM.SelectedContacts}">
+    <Grid>
+        <ListView ItemsSource="{Binding ContactsVM.Contacts}" SelectedItem="{Binding ContactsVM.SelectedContact}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <v:SingleContactView/>
+                    <v:SingleContactView/> 
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

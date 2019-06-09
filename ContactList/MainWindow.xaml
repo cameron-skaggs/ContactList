@@ -9,11 +9,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="400">
     
-    <Window.Resources>
+  <!--  <Window.Resources>
         <DataTemplate x:Name="ContactViewTemplate" DataType="{x:Type vm:ContactsViewModel}">
             <v:ContactView DataContext="{Binding}"/>
         </DataTemplate>
-    </Window.Resources>
+    </Window.Resources> -->
         
     <Window.DataContext>
         <local:AppViewModel/>
@@ -42,7 +42,8 @@
                 </Button.Content>
             </Button>
             <!-- Remove Contact Button -->
-            <Button x:Name="RemoveContactButton" Grid.Column="2" Margin="30, 10">
+            <Button x:Name="RemoveContactButton" Command="{Binding ContactsVM.DeleteContactCommand}"
+                    Grid.Column="2" Margin="30, 10">
                 <Button.Content>
                     <Image Height="30" Width="30" Source="pack://siteoforigin:,,,/Resources/remove.png" />
                 </Button.Content>

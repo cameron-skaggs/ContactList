@@ -19,7 +19,6 @@ namespace ContactList.ViewModels
         public static string NewName { get; set; }
         public static string NewPhoneNumber { get; set; }
         public static string NewEmail { get; set; }
-        private Contact _newContact;
 
         public ICommand OpenNewContactWindowCommand { get; private set; }
         public ICommand SaveContactCommand { get; private set; }
@@ -56,7 +55,7 @@ namespace ContactList.ViewModels
             Console.WriteLine("name: " + NewContact.Name +"\n phone:" + NewContact.PhoneNumber + "\n email" + NewContact.Email);
             Contacts.Add(NewContact);
             _contacts.Add(NewContact);
-
+     
         }
     }
 }

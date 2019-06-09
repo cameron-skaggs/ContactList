@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace ContactList
 {
@@ -24,7 +25,12 @@ namespace ContactList
             get { return _listVM; }
             set { OnPropertyChanged(ref _listVM, value); }
         }
-
+        private ContactsViewModel _contactsVM;
+        public ContactsViewModel ContactsVM
+        {
+            get { return _contactsVM; }
+            set { OnPropertyChanged(ref _contactsVM, value); }
+        }
         private NewContactViewModel _newContactVM;
         public NewContactViewModel NewContactVM
         {
@@ -33,9 +39,10 @@ namespace ContactList
         }
         public AppViewModel()
         {
-            var dataService = new MockDataService();
+            var dataService = new JsonContactDataService();
             ListVM = new ListViewModel(dataService);
             NewContactVM = new NewContactViewModel(dataService);
+            ContactsVM = new ContactsViewModel(dataService);
             CurrentView = ListVM;
         }
     }
