@@ -9,8 +9,10 @@ using System.Windows.Input;
 
 namespace ContactList
 {
+
     public class AppViewModel : ObservableObject
     {
+        private IContactDataService _dataService;
         private object _currentView;
         public object CurrentView
 
@@ -39,11 +41,22 @@ namespace ContactList
         }
         public AppViewModel()
         {
-            var dataService = new MockDataService();
-            ListVM = new ListViewModel(dataService);
+            var dataService = new JsonContactDataService();
+            _dataService = dataService;
+
             NewContactVM = new NewContactViewModel(dataService);
             ContactsVM = new ContactsViewModel(dataService);
+            ListVM = new ListViewModel(dataService, ContactsVM);
             CurrentView = ListVM;
         }
+
+        #region Commands
+        public ICommand DeleteContactCommand => new RelayCommand(Delete);
+        private void Delete()
+        {
+            _dataService.Delete(ContactsVM.SelectedContact);
+        }
+        private bool CanDelete() { return ContactsVM.SelectedContact == null ? false : true; }
+        #endregion
     }
 }

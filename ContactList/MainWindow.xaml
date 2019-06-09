@@ -42,7 +42,7 @@
                 </Button.Content>
             </Button>
             <!-- Remove Contact Button -->
-            <Button x:Name="RemoveContactButton" Command="{Binding ContactsVM.DeleteContactCommand}"
+            <Button x:Name="RemoveContactButton" Command="{Binding DeleteContactCommand}"
                     Grid.Column="2" Margin="30, 10">
                 <Button.Content>
                     <Image Height="30" Width="30" Source="pack://siteoforigin:,,,/Resources/remove.png" />

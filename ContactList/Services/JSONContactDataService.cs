@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -11,9 +12,11 @@ namespace ContactList.Services
 {
     public class JsonContactDataService : IContactDataService
     {
-        private readonly string _dataPath = "Resources/contactdata.json";
+        private const string _dataPath = "Resources/contactdata.json";
 
-        public IEnumerable<Contact> GetContacts()
+        public ObservableCollection<Contact> Contacts { get; set; } = new ObservableCollection<Contact>(GetContacts());
+
+        public static IEnumerable<Contact> GetContacts()
         {
             if (!File.Exists(_dataPath))
             {
@@ -29,10 +32,26 @@ namespace ContactList.Services
             return contacts;
         }
 
-        public void Save(IEnumerable<Contact> contacts)
+        public void Save()
         {
-            var serializedContacts = JsonConvert.SerializeObject(contacts);
+            var serializedContacts = JsonConvert.SerializeObject(Contacts);
             File.WriteAllText(_dataPath, serializedContacts);
         }
+        public void Add(Contact contact)
+        {
+            Contacts.Add(contact);
+            Save();
+        }
+        public void Delete(Contact contact)
+        {
+            Contacts.Remove(contact);
+            Save();
+        }
+
+        public void Load()
+        {
+
+        }
+
     }
 }

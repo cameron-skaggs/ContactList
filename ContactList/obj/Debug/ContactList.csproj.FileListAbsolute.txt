@@ -1,3 +1,11 @@
+C:\Users\camer\source\repos\ContactList\ContactList\obj\Debug\MainWindow.g.cs
+C:\Users\camer\source\repos\ContactList\ContactList\obj\Debug\Views\ContactView.g.cs
+C:\Users\camer\source\repos\ContactList\ContactList\obj\Debug\Views\SingleContactView.g.cs
+C:\Users\camer\source\repos\ContactList\ContactList\obj\Debug\Windows\NewContact.g.cs
+C:\Users\camer\source\repos\ContactList\ContactList\obj\Debug\App.g.cs
+C:\Users\camer\source\repos\ContactList\ContactList\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\camer\source\repos\ContactList\ContactList\obj\Debug\ContactList_MarkupCompile.cache
+C:\Users\camer\source\repos\ContactList\ContactList\obj\Debug\ContactList_MarkupCompile.lref
 C:\Users\camer\source\repos\ContactList\ContactList\bin\Debug\Resources\add_user.png
 C:\Users\camer\source\repos\ContactList\ContactList\bin\Debug\Resources\add.png
 C:\Users\camer\source\repos\ContactList\ContactList\bin\Debug\Resources\refresh.png
@@ -7,15 +15,7 @@ C:\Users\camer\source\repos\ContactList\ContactList\bin\Debug\ContactList.exe
 C:\Users\camer\source\repos\ContactList\ContactList\bin\Debug\ContactList.pdb
 C:\Users\camer\source\repos\ContactList\ContactList\bin\Debug\Newtonsoft.Json.dll
 C:\Users\camer\source\repos\ContactList\ContactList\bin\Debug\Newtonsoft.Json.xml
-C:\Users\camer\source\repos\ContactList\ContactList\obj\Debug\MainWindow.g.cs
-C:\Users\camer\source\repos\ContactList\ContactList\obj\Debug\Views\ContactView.g.cs
 C:\Users\camer\source\repos\ContactList\ContactList\obj\Debug\Views\ListView.g.cs
-C:\Users\camer\source\repos\ContactList\ContactList\obj\Debug\Views\SingleContactView.g.cs
-C:\Users\camer\source\repos\ContactList\ContactList\obj\Debug\Windows\NewContact.g.cs
-C:\Users\camer\source\repos\ContactList\ContactList\obj\Debug\App.g.cs
-C:\Users\camer\source\repos\ContactList\ContactList\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\Users\camer\source\repos\ContactList\ContactList\obj\Debug\ContactList_MarkupCompile.cache
-C:\Users\camer\source\repos\ContactList\ContactList\obj\Debug\ContactList_MarkupCompile.lref
 C:\Users\camer\source\repos\ContactList\ContactList\obj\Debug\App.baml
 C:\Users\camer\source\repos\ContactList\ContactList\obj\Debug\MainWindow.baml
 C:\Users\camer\source\repos\ContactList\ContactList\obj\Debug\Views\ContactView.baml

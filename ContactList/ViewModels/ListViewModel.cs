@@ -19,19 +19,12 @@ namespace ContactList.ViewModels
         }
         public ICommand LoadContactsCommand { get; private set; }
 
-        public ListViewModel(Services.IContactDataService service)
+        public ListViewModel(Services.IContactDataService service, ContactsViewModel vm)
         {
-            ContactsVM = new ContactsViewModel(service);
-
+            ContactsVM = vm;
             _service = service;
-            LoadContactsCommand = new RelayCommand(LoadContacts);
         }
 
-        private void LoadContacts()
-        {
-            Console.WriteLine("number of contacts in load contacts " + _service.GetContacts().Count());
-            ContactsVM.LoadContacts(_service.GetContacts());
-        }
     }
 
 }

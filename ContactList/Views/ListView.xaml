@@ -7,9 +7,11 @@
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="400">
     <Grid>
-        <ListView ItemsSource="{Binding ContactsVM.Contacts}" SelectedItem="{Binding ContactsVM.SelectedContact}">
+        <ListView ItemsSource="{Binding ContactsVM.Contacts}"
+                  SelectedValue="{Binding ContactsVM.SelectedContact}" 
+                  >
             <ListView.ItemTemplate>
-                <DataTemplate>
+                <DataTemplate >
                     <v:SingleContactView/> 
                 </DataTemplate>
             </ListView.ItemTemplate>
