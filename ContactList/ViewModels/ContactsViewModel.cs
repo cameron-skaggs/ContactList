@@ -12,9 +12,8 @@ namespace ContactList.ViewModels
 {
     public class ContactsViewModel : ObservableObject
     {
-        private Guid guid = Guid.NewGuid();
         public ObservableCollection<Contact> Contacts { get;  }
-        // This is the Contact which is selected by the user
+
         private Contact _selectedContact;
         public Contact SelectedContact
 
@@ -27,16 +26,12 @@ namespace ContactList.ViewModels
                 OnPropertyChanged(ref _selectedContact, value);
             }
         }
-
-
-
         private IContactDataService _dataService;
 
         public ContactsViewModel(Services.IContactDataService dataService)
         {
             _dataService = dataService;
-            Contacts = dataService.Contacts;
-            
+            Contacts = dataService.Contacts; 
         }
 
     }

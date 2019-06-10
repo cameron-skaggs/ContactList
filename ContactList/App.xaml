@@ -36,34 +36,5 @@
 
         <SolidColorBrush x:Key="AlmostBlack" Color="#FF131313"/>
 
-        <!--Gradient Brushes-->
-        <LinearGradientBrush x:Key="BlueGreyGradient" EndPoint="0,1">
-            <GradientStop Color="#FF4B6584" Offset="0.0" />
-            <GradientStop Color="#FF526B89" Offset="0.5" />
-            <GradientStop Color="#FF59718F" Offset="1.0" />
-        </LinearGradientBrush>
-
-        <LinearGradientBrush x:Key="LightBlueGreyGradient" EndPoint="0,1">
-            <GradientStop Color="#FF778CA3" Offset="0.0" />
-            <GradientStop Color="#FF7B8FA4" Offset="0.5" />
-            <GradientStop Color="#FF8798AA" Offset="1.0" />
-        </LinearGradientBrush>
-
-        <!--Control Styles-->
-        <Style x:Key="MenuTabButton" TargetType="Button">
-            <Setter Property="Background" Value="{StaticResource BlueGreyGradient}"/>
-            <Setter Property="Foreground" Value="{StaticResource Innuendo}"/>
-            <Setter Property="BorderBrush" Value="{StaticResource BlueHorizon}"/>
-            <Setter Property="BorderThickness" Value="0,0,1,0"/>
-            <Setter Property="FontSize" Value="16"/>
-        </Style>
-
-        <Style x:Key="MenuIconButton" TargetType="Button">
-            <Setter Property="Background" Value="{StaticResource BlueGreyGradient}"/>
-            <Setter Property="Foreground" Value="{StaticResource MaximumBlueGreen}"/>
-            <Setter Property="Padding" Value="5"/>
-            <Setter Property="BorderThickness" Value="0,0,0,0"/>
-        </Style>
-        
     </Application.Resources>
 </Application>

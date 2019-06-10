@@ -22,7 +22,6 @@ namespace ContactList.Services
             {
                 File.Create(_dataPath).Close();
             }
-
             var serializedContacts = File.ReadAllText(_dataPath);
             var contacts = JsonConvert.DeserializeObject<IEnumerable<Contact>>(serializedContacts);
 
@@ -31,7 +30,6 @@ namespace ContactList.Services
 
             return contacts;
         }
-
         public void Save()
         {
             var serializedContacts = JsonConvert.SerializeObject(Contacts);
@@ -47,11 +45,5 @@ namespace ContactList.Services
             Contacts.Remove(contact);
             Save();
         }
-
-        public void Load()
-        {
-
-        }
-
     }
 }

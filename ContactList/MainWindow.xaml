@@ -8,12 +8,6 @@
         xmlns:v="clr-namespace:ContactList.Views"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="400">
-    
-  <!--  <Window.Resources>
-        <DataTemplate x:Name="ContactViewTemplate" DataType="{x:Type vm:ContactsViewModel}">
-            <v:ContactView DataContext="{Binding}"/>
-        </DataTemplate>
-    </Window.Resources> -->
         
     <Window.DataContext>
         <local:AppViewModel/>
@@ -21,10 +15,10 @@
     
     <DockPanel>
         <!-- Add, Remove, Update Buttons -->
-        <Grid Background="LightGray" DockPanel.Dock="Top">
+        <Grid Background="SkyBlue" DockPanel.Dock="Top">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
+
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <!-- Edit Contact Button -->
@@ -34,16 +28,9 @@
                     <Image Height="30" Width="30" Source="pack://siteoforigin:,,,/Resources/add_user.png" />
                 </Button.Content>
             </Button>
-            <!-- Edit Contact Button -->
-            <Button x:Name="EditContactButton" Grid.Column="1"
-                        Margin="30, 10" Command="{Binding ListVM.LoadContactsCommand}">
-                <Button.Content>
-                    <Image Height="30" Width="30" Source="pack://siteoforigin:,,,/Resources/refresh.png" />
-                </Button.Content>
-            </Button>
             <!-- Remove Contact Button -->
             <Button x:Name="RemoveContactButton" Command="{Binding DeleteContactCommand}"
-                    Grid.Column="2" Margin="30, 10">
+                    Grid.Column="1" Margin="30, 10">
                 <Button.Content>
                     <Image Height="30" Width="30" Source="pack://siteoforigin:,,,/Resources/remove.png" />
                 </Button.Content>

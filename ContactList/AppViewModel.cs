@@ -10,7 +10,7 @@ using System.Windows.Input;
 
 namespace ContactList
 {
-
+    //This ViewModel should act as a "central hub" for all my other view models
     public class AppViewModel : ObservableObject
     {
         private IContactDataService _dataService;
@@ -41,7 +41,7 @@ namespace ContactList
             NewContactVM = new NewContactViewModel(dataService);
             ContactsVM = new ContactsViewModel(dataService);
             ListVM = new ListViewModel(dataService, ContactsVM);
-            
+
         }
 
         #region Commands
@@ -54,7 +54,6 @@ namespace ContactList
 
         public ICommand OpenNewContactWindowCommand => new RelayCommand(showNewContact);
         
-        //this is breaking MVVM rules :(
         private void showNewContact()
         {
             NewContact newContact = new NewContact();
