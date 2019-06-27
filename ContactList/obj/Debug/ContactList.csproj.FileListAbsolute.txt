@@ -29,3 +29,4 @@ C:\Users\camer\source\repos\ContactList\ContactList\obj\Debug\ContactList.csproj
 C:\Users\camer\source\repos\ContactList\ContactList\obj\Debug\ContactList.csproj.CopyComplete
 C:\Users\camer\source\repos\ContactList\ContactList\obj\Debug\ContactList.exe
 C:\Users\camer\source\repos\ContactList\ContactList\obj\Debug\ContactList.pdb
+C:\Users\camer\source\repos\ContactList\ContactList\obj\Debug\ContactList.csprojAssemblyReference.cache

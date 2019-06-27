@@ -37,8 +37,20 @@ namespace ContactList.Services
         }
         public void Add(Contact contact)
         {
-            Contacts.Add(contact);
-            Save();
+            bool newContact = true;
+            foreach(Contact c in Contacts)
+            {
+                if(c.Name.Equals(contact.Name))
+                {
+                    Console.WriteLine(c.Name);
+                    newContact = false;
+                }
+            }
+            if (newContact)
+            {
+                Contacts.Add(contact);
+                Save();
+            }
         }
         public void Delete(Contact contact)
         {
